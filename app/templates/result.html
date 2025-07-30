@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Roll Result</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: sans-serif;
+      padding: 2rem;
+      background: #f9f9f9;
+    }
+
+    video {
+      max-width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .back {
+      margin-top: 20px;
+    }
+
+    .back a {
+      text-decoration: none;
+      color: #007bff;
+    }
+
+    .back a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Roll Result</h1>
+
+  <video controls autoplay>
+    <source src="{{ url_for('static', filename=filename) }}?v={{ rand }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="back">
+    <a href="{{ url_for('index') }}">🔁 Roll Again</a>
+  </div>
+</body>
+</html>
